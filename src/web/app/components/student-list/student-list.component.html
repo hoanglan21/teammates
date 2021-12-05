@@ -68,7 +68,7 @@
              [ngClass]="{'disabled mouse-hover-only': !isEnabled}"
              [ngbTooltip]="isEnabled ? tooltip : 'You do not have the permissions to access this feature'"
              [tmRouterLink]="tmRouterLink"
-             [queryParams]="queryParams">
+             [queryParamsT]="queryParams">
             {{name}}</a>
         </ng-template>
         <ng-container *ngTemplateOutlet="actionButton; context: {

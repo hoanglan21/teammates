@@ -119,7 +119,7 @@
               <a id="btn-enroll-{{ i }}" class="btn btn-light btn-sm" *ngIf="course.canModifyStudent"
                       ngbTooltip="Enroll student into the course"
                       tmRouterLink="/web/instructor/courses/enroll"
-                      [queryParams]="{courseid: course.course.courseId}">
+                 [queryParamsT]="{courseid: course.course.courseId}">
                 Enroll
               </a>
               <button id="btn-enroll-disabled-{{ i }}" class="btn btn-light btn-sm disabled" *ngIf="!course.canModifyStudent">
@@ -130,12 +130,12 @@
                 <div ngbDropdownMenu>
                   <a class="btn btn-primary btn-sm dropdown-item clickable"
                           tmRouterLink="/web/instructor/courses/details"
-                          [queryParams]="{courseid: course.course.courseId}">
+                     [queryParamsT]="{courseid: course.course.courseId}">
                     View
                   </a>
                   <a class="btn btn-primary btn-sm dropdown-item clickable"
                           tmRouterLink="/web/instructor/courses/edit"
-                          [queryParams]="{courseid: course.course.courseId}">
+                     [queryParamsT]="{courseid: course.course.courseId}">
                     Edit
                   </a>
                   <button id="btn-copy-{{ i }}" class="btn btn-primary btn-sm dropdown-item clickable" *ngIf="course.canModifyCourse" (click)="onCopy(course.course.courseId, course.course.courseName, course.course.timeZone)"

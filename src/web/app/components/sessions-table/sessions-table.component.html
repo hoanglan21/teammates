@@ -61,7 +61,8 @@
           <tm-ajax-loading *ngIf="sessionsTableRowModel.isLoadingResponseRate" [useBlueSpinner]="true"></tm-ajax-loading>
         </td>
         <td class="actions-cell">
-          <a *ngIf="sessionsTableRowModel.instructorPrivilege.canModifySession; else editSessionBtn" tmRouterLink="/web/instructor/sessions/edit" [queryParams]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName, editingMode: true }">
+          <a *ngIf="sessionsTableRowModel.instructorPrivilege.canModifySession; else editSessionBtn" tmRouterLink="/web/instructor/sessions/edit"
+             [queryParamsT]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName, editingMode: true }">
             <ng-container *ngTemplateOutlet="editSessionBtn"></ng-container>
           </a>
           <ng-template #editSessionBtn>
@@ -75,7 +76,7 @@
           <button id="btn-copy-{{ idx }}" type="button" class="btn btn-light btn-sm" ngbTooltip="Copy feedback session details" (click)="copySession(idx)">Copy</button>
           <a *ngIf="sessionsTableRowModel.feedbackSession.submissionStatus === FeedbackSessionSubmissionStatus.OPEN && sessionsTableRowModel.instructorPrivilege.canSubmitSessionInSections; else submitBtn"
              tmRouterLink="/web/instructor/sessions/submission"
-             [queryParams]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName }">
+             [queryParamsT]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName }">
             <ng-container *ngTemplateOutlet="submitBtn"></ng-container>
           </a>
           <ng-template #submitBtn>
@@ -88,10 +89,10 @@
             <div ngbDropdownMenu>
               <a class="btn dropdown-item clickable" [ngClass]="{disabled: !sessionsTableRowModel.instructorPrivilege.canViewSessionInSections}"
                       tmRouterLink="/web/instructor/sessions/result"
-                      [queryParams]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName }">View Results (from/to me)</a>
+                 [queryParamsT]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName }">View Results (from/to me)</a>
               <a class="btn dropdown-item clickable" [ngClass]="{disabled: !sessionsTableRowModel.instructorPrivilege.canViewSessionInSections}"
                       tmRouterLink="/web/instructor/sessions/report"
-                      [queryParams]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName }">View Results (course-wide)</a>
+                 [queryParamsT]="{ courseid: sessionsTableRowModel.feedbackSession.courseId, fsname: sessionsTableRowModel.feedbackSession.feedbackSessionName }">View Results (course-wide)</a>
               <button id="btn-unpublish-{{ idx }}" class="btn dropdown-item clickable" ngbTooltip="Make responses no longer visible" placement="left" container="body"
                       *ngIf="![FeedbackSessionSubmissionStatus.NOT_VISIBLE, FeedbackSessionSubmissionStatus.VISIBLE_NOT_OPEN].includes(sessionsTableRowModel.feedbackSession.submissionStatus)
                         && sessionsTableRowModel.feedbackSession.publishStatus === FeedbackSessionPublishStatus.PUBLISHED; else publishButton"

@@ -1,9 +1,10 @@
-import { Input, OnInit } from '@angular/core';
+import { Input, OnInit, Directive } from '@angular/core';
 import { FeedbackQuestionDetails } from '../../../../types/api-output';
 
 /**
  * The abstract question additional info section.
  */
+@Directive()
 export abstract class QuestionAdditionalInfo<Q extends FeedbackQuestionDetails> implements OnInit {
 
   @Input()

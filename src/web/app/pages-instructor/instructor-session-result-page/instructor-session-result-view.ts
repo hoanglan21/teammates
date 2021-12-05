@@ -1,4 +1,4 @@
-import { EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter, Input, OnInit, Output, Directive } from '@angular/core';
 import {
   FeedbackSession,
   FeedbackSessionPublishStatus,
@@ -13,6 +13,7 @@ import { InstructorSessionResultViewType } from './instructor-session-result-vie
 /**
  * Abstract component for all different view type components of instructor sessions result page.
  */
+@Directive()
 export abstract class InstructorSessionResultView implements OnInit {
 
   @Input() section: string = '';

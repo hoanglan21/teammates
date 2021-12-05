@@ -23,6 +23,13 @@
             "polyfills": "src/web/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "file-saver",
+              "moment-timezone",
+              "core-js",
+              "ua-parser-js"
+            ],
             "assets": [
               "src/web/assets/"
             ],

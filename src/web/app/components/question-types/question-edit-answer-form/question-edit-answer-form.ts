@@ -1,9 +1,10 @@
-import { EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter, Input, OnInit, Output, Directive } from '@angular/core';
 import { FeedbackQuestionDetails, FeedbackResponseDetails } from '../../../../types/api-output';
 
 /**
  * The abstract recipient submission form.
  */
+@Directive()
 export abstract class QuestionEditAnswerFormComponent<
     Q extends FeedbackQuestionDetails, R extends FeedbackResponseDetails> implements OnInit {
 

@@ -8,7 +8,7 @@
         <option *ngFor="let student of studentsOfCourse" [ngValue]="student.email">[{{ student.teamName }}] {{ student.name }}</option>
       </select>
       <a *ngIf="emailOfStudentToPreview.length !== 0; else previewStudentBtn" tmRouterLink="/web/sessions/submission"
-         [queryParams]="{ courseid: courseId, fsname: feedbackSessionName, previewas: emailOfStudentToPreview }"
+         [queryParamsT]="{ courseid: courseId, fsname: feedbackSessionName, previewas: emailOfStudentToPreview }"
          target="_blank"
          rel="noopener noreferrer"
          [ngbTooltip]="emailOfStudentToPreview.length !== 0 ? 'View how this session would look like to a student who is submitting feedback.' : 'Preview is unavailable if the course has yet to have any student enrolled.'">
@@ -23,7 +23,7 @@
         <option *ngFor="let instructor of instructorsCanBePreviewedAs" [ngValue]="instructor.email">{{ instructor.name }}</option>
       </select>
       <a *ngIf="emailOfInstructorToPreview.length !== 0; else previewInstructorBtn" tmRouterLink="/web/instructor/sessions/submission"
-         [queryParams]="{ courseid: courseId, fsname: feedbackSessionName, previewas: emailOfInstructorToPreview }"
+         [queryParamsT]="{ courseid: courseId, fsname: feedbackSessionName, previewas: emailOfInstructorToPreview }"
          target="_blank"
          rel="noopener noreferrer"
          ngbTooltip="View how this session would look like to an instructor who is submitting feedback. Only instructors with submit privileges are included in the list.">
