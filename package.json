@@ -23,7 +23,7 @@
     "@angular/localize": "~9.1.11",
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
-    "@angular/pwa": "~0.901.9",
+    "@angular/pwa": "~0.1102.15",
     "@angular/router": "~9.1.11",
     "@angular/service-worker": "~9.1.11",
     "@handsontable/angular": "^5.1.1",
