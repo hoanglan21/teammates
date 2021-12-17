@@ -40,7 +40,7 @@
     "ngx-captcha": "^8.0.1",
     "ngx-image-cropper": "^1.5.1",
     "ngx-page-scroll-core": "^7.0.1",
-    "rxjs": "~6.5.5",
+    "rxjs": "~6.6.7",
     "topojson": "^3.0.2",
     "tslib": "^1.13.0",
     "ua-parser-js": "^0.7.21",
